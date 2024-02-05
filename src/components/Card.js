@@ -1,6 +1,9 @@
 import { BsFillBagFill } from "react-icons/bs";
+import { useState } from "react";
+const Card = ({ img, title, star, reviews, prevPrice, newPrice,increasecount }) => {
+  
+    
 
-const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
   return (
     <>
       <section className="card">
@@ -16,7 +19,8 @@ const Card = ({ img, title, star, reviews, prevPrice, newPrice }) => {
               <del>{prevPrice}</del> {newPrice}
             </div>
             <div className="bag">
-              <BsFillBagFill className="bag-icon" />
+              <BsFillBagFill className="bag-icon"  onClick={increasecount}/>
+              
             </div>
           </section>
         </div>
