@@ -14,6 +14,12 @@ function App() {
   // ----------- Input Filter -----------
   const [query, setQuery] = useState("");
 
+  const [count,setCount]=useState(0);
+   
+  const handlecartclick =()=>{
+     setCount(count+1);
+  };
+
   const handleInputChange = (event) => {
     setQuery(event.target.value);
   };
@@ -31,6 +37,8 @@ function App() {
   const handleClick = (event) => {
     setSelectedCategory(event.target.value);
   };
+
+  
 
   function filteredData(products, selected, query) {
     let filteredProducts = products;
@@ -53,7 +61,7 @@ function App() {
     }
 
     return filteredProducts.map(
-      ({ img, title, star, reviews, prevPrice, newPrice }) => (
+      ({ img, title, star, reviews, prevPrice, newPrice,increasecount}) => (
         <Card
           key={Math.random()}
           img={img}
@@ -62,6 +70,7 @@ function App() {
           reviews={reviews}
           prevPrice={prevPrice}
           newPrice={newPrice}
+          increasecount={handlecartclick}
         />
       )
     );
@@ -71,8 +80,9 @@ function App() {
 
   return (
     <>
+      
+      <Navigation query={query} handleInputChange={handleInputChange} count={count}/>
       <Sidebar handleChange={handleChange} />
-      <Navigation query={query} handleInputChange={handleInputChange} />
       <Recommended handleClick={handleClick} />
       <Products result={result} />
     </>
