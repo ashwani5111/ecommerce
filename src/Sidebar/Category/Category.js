@@ -3,13 +3,14 @@ import Input from "../../components/Input";
 
 function Category({ handleChange }) {
   return (
-    <div>
-      <h2 className="sidebar-title">Category</h2>
 
-      <div>
-        <label className="sidebar-label-container">
+    <div className="flex flex-col ">
+      <h2 className="mx-5 my-2">Categories</h2>
+
+      <div className="flex flex-col my-2 mx-5">
+        <label className="">
           <input onChange={handleChange} type="radio" value="" name="test" />
-          <span className="checkmark"></span>All
+          <span className=""></span>All
         </label>
         <Input
           handleChange={handleChange}
