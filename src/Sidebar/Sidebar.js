@@ -6,7 +6,7 @@ import "./Sidebar.css";
 const Sidebar = ({ handleChange }) => {
   return (
     <>
-      <section className="">
+      <section className=" fixed z-30">
         <div className="">
           
         </div>
